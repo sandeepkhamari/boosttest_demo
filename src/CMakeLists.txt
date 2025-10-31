@@ -1,0 +1,10 @@
+add_library(math_utils STATIC math_utils.cpp)
+target_include_directories(math_utils PUBLIC ${CMAKE_SOURCE_DIR}/include)
+target_compile_options(math_utils PRIVATE -Wall -Wextra -O2)
+target_compile_definitions(math_utils PRIVATE SRC_MACRO)
+
+add_executable(mathApp main.cpp)
+target_include_directories(mathApp PUBLIC ${CMAKE_SOURCE_DIR}/include)
+target_link_libraries(mathApp PUBLIC math_utils)
+target_compile_options(mathApp PRIVATE -O2)
+target_compile_definitions(mathApp PRIVATE SRC_EXE_MACRO)

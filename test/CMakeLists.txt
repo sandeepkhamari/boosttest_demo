@@ -26,10 +26,11 @@ find_package(Boost REQUIRED COMPONENTS unit_test_framework)
 target_include_directories(test_math_utils PRIVATE ${Boost_INCLUDE_DIRS})
 message(STATUS "BOOST_UNIT_TEST_FRAMEWORK_LIBRARY: ${BOOST_UNIT_TEST_FRAMEWORK_LIBRARY}")
 
-target_link_libraries(test_math_utils 
-	              PUBLIC
-		      ${BOOST_UNIT_TEST_FRAMEWORK_LIBRARY}
-	      )
+# Not required, as we are using the included header option.
+#target_link_libraries(test_math_utils 
+#	              PUBLIC
+#		      ${BOOST_UNIT_TEST_FRAMEWORK_LIBRARY}
+#	      )
 
 enable_testing()
 include(CTest)
